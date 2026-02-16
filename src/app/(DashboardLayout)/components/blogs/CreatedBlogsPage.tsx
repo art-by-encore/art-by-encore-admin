@@ -359,14 +359,14 @@ const CreatedBlogsPage = () => {
           {/* Table */}
           <TableContainer component={Paper} elevation={2}>
             <Table sx={{ minWidth: 650 }}>
-              <TableHead sx={{ backgroundColor: 'primary.light' }}>
+              <TableHead sx={{ backgroundColor: 'primary.main' }}>
                 <TableRow>
-                  <TableCell><Typography fontWeight="bold">ID</Typography></TableCell>
-                  <TableCell><Typography fontWeight="bold">Content</Typography></TableCell>
-                  <TableCell><Typography fontWeight="bold">SEO & Banner</Typography></TableCell>
-                  <TableCell><Typography fontWeight="bold">Tags & URLs</Typography></TableCell>
-                  <TableCell><Typography fontWeight="bold">Dates</Typography></TableCell>
-                  <TableCell align="center"><Typography fontWeight="bold">Actions</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold"  sx={{color:'primary.light'}}>ID</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold"  sx={{color:'primary.light'}}>Content</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold"  sx={{color:'primary.light'}}>SEO & Banner</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold"  sx={{color:'primary.light'}}>Tags & URLs</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold"  sx={{color:'primary.light'}}>Dates</Typography></TableCell>
+                  <TableCell align="center"><Typography fontWeight="bold"  sx={{color:'primary.light'}}>Actions</Typography></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>

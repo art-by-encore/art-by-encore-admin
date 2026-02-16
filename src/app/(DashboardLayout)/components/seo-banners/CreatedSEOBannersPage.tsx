@@ -358,14 +358,14 @@ const CreatedSEOBannersPage = () => {
           {/* Table */}
           <TableContainer component={Paper} elevation={2}>
             <Table sx={{ minWidth: 650 }}>
-              <TableHead sx={{ backgroundColor: 'primary' }}>
-                <TableRow>
-                  <TableCell><Typography fontWeight="bold">ID</Typography></TableCell>
-                  <TableCell><Typography fontWeight="bold">SEO Settings</Typography></TableCell>
-                  <TableCell><Typography fontWeight="bold">Banner Details</Typography></TableCell>
-                  <TableCell><Typography fontWeight="bold">Media Assets</Typography></TableCell>
-                  <TableCell><Typography fontWeight="bold">Dates</Typography></TableCell>
-                  <TableCell align="center"><Typography fontWeight="bold">Actions</Typography></TableCell>
+              <TableHead sx={{ backgroundColor: 'primary.main' }}>
+                <TableRow >
+                  <TableCell><Typography fontWeight="bold" sx={{ color: 'primary.light' }}>ID</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold" sx={{ color: 'primary.light' }}>SEO Settings</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold" sx={{ color: 'primary.light' }}>Banner Details</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold" sx={{ color: 'primary.light' }}>Media Assets</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold" sx={{ color: 'primary.light' }}>Dates</Typography></TableCell>
+                  <TableCell align="center"><Typography fontWeight="bold" sx={{ color: 'primary.light' }}>Actions</Typography></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>

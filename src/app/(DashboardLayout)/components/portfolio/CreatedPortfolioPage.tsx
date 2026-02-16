@@ -442,14 +442,14 @@ const CreatedPortfolioPage = () => {
           {/* Table */}
           <TableContainer component={Paper} elevation={2}>
             <Table sx={{ minWidth: 650 }}>
-              <TableHead sx={{ backgroundColor: 'primary.light' }}>
+              <TableHead sx={{ backgroundColor: 'primary.main' }}>
                 <TableRow>
-                  <TableCell><Typography fontWeight="bold">ID</Typography></TableCell>
-                  <TableCell><Typography fontWeight="bold">Banner</Typography></TableCell>
-                  <TableCell><Typography fontWeight="bold">SEO & Card</Typography></TableCell>
-                  <TableCell><Typography fontWeight="bold">Gallery Type & Media</Typography></TableCell>
-                  <TableCell><Typography fontWeight="bold">Dates</Typography></TableCell>
-                  <TableCell align="center"><Typography fontWeight="bold">Actions</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold" sx={{ color: 'primary.light' }}>ID</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold" sx={{ color: 'primary.light' }}>Banner</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold" sx={{ color: 'primary.light' }}>SEO & Card</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold" sx={{ color: 'primary.light' }}>Gallery Type & Media</Typography></TableCell>
+                  <TableCell><Typography fontWeight="bold" sx={{ color: 'primary.light' }}>Dates</Typography></TableCell>
+                  <TableCell align="center"><Typography fontWeight="bold" sx={{ color: 'primary.light' }}>Actions</Typography></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -457,214 +457,215 @@ const CreatedPortfolioPage = () => {
                   paginatedPortfolios.map((portfolio) => {
                     const galleryInfo = getGalleryTypeInfo(portfolio.key);
                     return (
-                    <TableRow
-                      key={portfolio.id}
-                      hover
-                      sx={{
-                        "&:last-child td, &:last-child th": { border: 0 },
-                        "&:hover": { backgroundColor: 'action.hover' },
-                      }}
-                    >
-                      {/* ID Column */}
-                      <TableCell>
-                        <Typography variant="body2" fontWeight="bold" color="primary">
-                          #{portfolio.id}
-                        </Typography>
-                      </TableCell>
-
-                      {/* Banner Column */}
-                      <TableCell>
-                        <Stack spacing={1}>
-                          <Stack direction="row" spacing={1} alignItems="center">
-                            <TitleIcon fontSize="small" color="action" />
-                            <Typography variant="subtitle1" fontWeight="medium">
-                              {truncateText(portfolio.banner?.title || "No Banner Title", 30)}
-                            </Typography>
-                          </Stack>
-                          <Typography variant="caption" color="text.secondary">
-                            {truncateText(portfolio.banner?.description || "No description", 50)}
+                      <TableRow
+                        key={portfolio.id}
+                        hover
+                        sx={{
+                          "&:last-child td, &:last-child th": { border: 0 },
+                          "&:hover": { backgroundColor: 'action.hover' },
+                        }}
+                      >
+                        {/* ID Column */}
+                        <TableCell>
+                          <Typography variant="body2" fontWeight="bold" color="primary">
+                            #{portfolio.id}
                           </Typography>
-                          <Stack direction="row" spacing={1} alignItems="center">
-                            <VideoIcon fontSize="small" color="action" />
-                            <Typography variant="caption">
-                              {portfolio.banner?.videoUrl ? "Has video" : "No video"}
-                            </Typography>
-                          </Stack>
-                          <Stack direction="row" spacing={1} alignItems="center">
-                            <ImageIcon fontSize="small" color="action" />
-                            <Typography variant="caption">
-                              {portfolio.banner?.poster ? "Has poster" : "No poster"}
-                            </Typography>
-                          </Stack>
-                        </Stack>
-                      </TableCell>
+                        </TableCell>
 
-                      {/* SEO & Card Column */}
-                      <TableCell>
-                        <Stack spacing={1}>
-                          <Typography variant="body2" fontWeight="medium">
-                            {truncateText(portfolio.seo?.title || "No SEO Title", 40)}
-                          </Typography>
-                          <Stack direction="row" spacing={0.5} flexWrap="wrap">
-                            {portfolio.seo?.keywords?.split(',').slice(0, 2).map((keyword, idx) => (
-                              <Chip
-                                key={idx}
-                                label={keyword.trim()}
-                                size="small"
-                                variant="outlined"
-                                sx={{ mt: 0.5 }}
-                              />
-                            ))}
-                            {portfolio.seo?.keywords?.split(',').length > 2 && (
-                              <Chip
-                                label={`+${portfolio.seo.keywords.split(',').length - 2}`}
-                                size="small"
-                                sx={{ mt: 0.5 }}
-                              />
+                        {/* Banner Column */}
+                        <TableCell>
+                          <Stack spacing={1}>
+                            <Stack direction="row" spacing={1} alignItems="center">
+                              <TitleIcon fontSize="small" color="action" />
+                              <Typography variant="subtitle1" fontWeight="medium">
+                                {truncateText(portfolio.banner?.title || "No Banner Title", 30)}
+                              </Typography>
+                            </Stack>
+                            <Typography variant="caption" color="text.secondary">
+                              {truncateText(portfolio.banner?.description || "No description", 50)}
+                            </Typography>
+                            <Stack direction="row" spacing={1} alignItems="center">
+                              <VideoIcon fontSize="small" color="action" />
+                              <Typography variant="caption">
+                                {portfolio.banner?.videoUrl ? "Has video" : "No video"}
+                              </Typography>
+                            </Stack>
+                            <Stack direction="row" spacing={1} alignItems="center">
+                              <ImageIcon fontSize="small" color="action" />
+                              <Typography variant="caption">
+                                {portfolio.banner?.poster ? "Has poster" : "No poster"}
+                              </Typography>
+                            </Stack>
+                          </Stack>
+                        </TableCell>
+
+                        {/* SEO & Card Column */}
+                        <TableCell>
+                          <Stack spacing={1}>
+                            <Typography variant="body2" fontWeight="medium">
+                              {truncateText(portfolio.seo?.title || "No SEO Title", 40)}
+                            </Typography>
+                            <Stack direction="row" spacing={0.5} flexWrap="wrap">
+                              {portfolio.seo?.keywords?.split(',').slice(0, 2).map((keyword, idx) => (
+                                <Chip
+                                  key={idx}
+                                  label={keyword.trim()}
+                                  size="small"
+                                  variant="outlined"
+                                  sx={{ mt: 0.5 }}
+                                />
+                              ))}
+                              {portfolio.seo?.keywords?.split(',').length > 2 && (
+                                <Chip
+                                  label={`+${portfolio.seo.keywords.split(',').length - 2}`}
+                                  size="small"
+                                  sx={{ mt: 0.5 }}
+                                />
+                              )}
+                            </Stack>
+                            <Stack direction="row" spacing={1} alignItems="center">
+                              <LinkIcon fontSize="small" color="action" />
+                              <Typography variant="caption">
+                                CTA: {portfolio.content?.card?.ctaText || "No CTA"}
+                              </Typography>
+                            </Stack>
+                            <Typography variant="caption" color="text.secondary">
+                              {portfolio.content?.card?.cardBackgroundImage ? "Has background" : "No background"}
+                            </Typography>
+                          </Stack>
+                        </TableCell>
+
+                        {/* Gallery Type & Media Column */}
+                        <TableCell>
+                          <Stack spacing={1}>
+                            <Chip
+                              label={galleryInfo.label}
+                              size="small"
+                              color={galleryInfo.color}
+                              variant="outlined"
+                            />
+                            <Typography variant="caption" fontWeight="medium">
+                              {getMediaCount(portfolio)}
+                            </Typography>
+
+                            {/* Show sample items based on type */}
+                            {portfolio.key === "imageGallery" && portfolio.content?.imageGallery && (
+                              <Stack direction="row" spacing={0.5} flexWrap="wrap">
+                                {portfolio.content.imageGallery.slice(0, 2).map((item, idx) => (
+                                  <Chip
+                                    key={idx}
+                                    icon={<ImageIcon fontSize="small" />}
+                                    label={truncateText(item.alt || "Image", 15)}
+                                    size="small"
+                                    variant="outlined"
+                                    sx={{ mt: 0.5 }}
+                                  />
+                                ))}
+                                {portfolio.content.imageGallery.length > 2 && (
+                                  <Chip
+                                    label={`+${portfolio.content.imageGallery.length - 2}`}
+                                    size="small"
+                                    sx={{ mt: 0.5 }}
+                                  />
+                                )}
+                              </Stack>
+                            )}
+
+                            {portfolio.key === "videoGallery" && portfolio.content?.videoGallery && (
+                              <Stack direction="row" spacing={0.5} flexWrap="wrap">
+                                {portfolio.content.videoGallery.slice(0, 2).map((item, idx) => (
+                                  <Chip
+                                    key={idx}
+                                    icon={<VideoIcon fontSize="small" />}
+                                    label="Video"
+                                    size="small"
+                                    variant="outlined"
+                                    sx={{ mt: 0.5 }}
+                                  />
+                                ))}
+                                {portfolio.content.videoGallery.length > 2 && (
+                                  <Chip
+                                    label={`+${portfolio.content.videoGallery.length - 2}`}
+                                    size="small"
+                                    sx={{ mt: 0.5 }}
+                                  />
+                                )}
+                              </Stack>
+                            )}
+
+                            {portfolio.key === "imageVideoTabsGallery" && portfolio.content?.imageVideoTabsGallery && (
+                              <Stack direction="row" spacing={0.5} flexWrap="wrap">
+                                {portfolio.content.imageVideoTabsGallery.slice(0, 2).map((tab, idx) => (
+                                  <Chip
+                                    key={idx}
+                                    label={truncateText(tab.tabTitle || `Tab ${idx + 1}`, 15)}
+                                    size="small"
+                                    variant="outlined"
+                                    sx={{ mt: 0.5 }}
+                                  />
+                                ))}
+                                {portfolio.content.imageVideoTabsGallery.length > 2 && (
+                                  <Chip
+                                    label={`+${portfolio.content.imageVideoTabsGallery.length - 2}`}
+                                    size="small"
+                                    sx={{ mt: 0.5 }}
+                                  />
+                                )}
+                              </Stack>
                             )}
                           </Stack>
-                          <Stack direction="row" spacing={1} alignItems="center">
-                            <LinkIcon fontSize="small" color="action" />
-                            <Typography variant="caption">
-                              CTA: {portfolio.content?.card?.ctaText || "No CTA"}
-                            </Typography>
-                          </Stack>
-                          <Typography variant="caption" color="text.secondary">
-                            {portfolio.content?.card?.cardBackgroundImage ? "Has background" : "No background"}
-                          </Typography>
-                        </Stack>
-                      </TableCell>
+                        </TableCell>
 
-                      {/* Gallery Type & Media Column */}
-                      <TableCell>
-                        <Stack spacing={1}>
-                          <Chip
-                            label={galleryInfo.label}
-                            size="small"
-                            color={galleryInfo.color}
-                            variant="outlined"
-                          />
-                          <Typography variant="caption" fontWeight="medium">
-                            {getMediaCount(portfolio)}
-                          </Typography>
-                          
-                          {/* Show sample items based on type */}
-                          {portfolio.key === "imageGallery" && portfolio.content?.imageGallery && (
-                            <Stack direction="row" spacing={0.5} flexWrap="wrap">
-                              {portfolio.content.imageGallery.slice(0, 2).map((item, idx) => (
-                                <Chip
-                                  key={idx}
-                                  icon={<ImageIcon fontSize="small" />}
-                                  label={truncateText(item.alt || "Image", 15)}
-                                  size="small"
-                                  variant="outlined"
-                                  sx={{ mt: 0.5 }}
-                                />
-                              ))}
-                              {portfolio.content.imageGallery.length > 2 && (
-                                <Chip
-                                  label={`+${portfolio.content.imageGallery.length - 2}`}
-                                  size="small"
-                                  sx={{ mt: 0.5 }}
-                                />
-                              )}
+                        {/* Dates Column */}
+                        <TableCell>
+                          <Stack spacing={0.5}>
+                            <Stack direction="row" spacing={0.5} alignItems="center">
+                              <CalendarToday fontSize="small" color="action" />
+                              <Typography variant="caption">
+                                Created: {formatDate(portfolio.created_at)}
+                              </Typography>
                             </Stack>
-                          )}
-
-                          {portfolio.key === "videoGallery" && portfolio.content?.videoGallery && (
-                            <Stack direction="row" spacing={0.5} flexWrap="wrap">
-                              {portfolio.content.videoGallery.slice(0, 2).map((item, idx) => (
-                                <Chip
-                                  key={idx}
-                                  icon={<VideoIcon fontSize="small" />}
-                                  label="Video"
-                                  size="small"
-                                  variant="outlined"
-                                  sx={{ mt: 0.5 }}
-                                />
-                              ))}
-                              {portfolio.content.videoGallery.length > 2 && (
-                                <Chip
-                                  label={`+${portfolio.content.videoGallery.length - 2}`}
-                                  size="small"
-                                  sx={{ mt: 0.5 }}
-                                />
-                              )}
-                            </Stack>
-                          )}
-
-                          {portfolio.key === "imageVideoTabsGallery" && portfolio.content?.imageVideoTabsGallery && (
-                            <Stack direction="row" spacing={0.5} flexWrap="wrap">
-                              {portfolio.content.imageVideoTabsGallery.slice(0, 2).map((tab, idx) => (
-                                <Chip
-                                  key={idx}
-                                  label={truncateText(tab.tabTitle || `Tab ${idx + 1}`, 15)}
-                                  size="small"
-                                  variant="outlined"
-                                  sx={{ mt: 0.5 }}
-                                />
-                              ))}
-                              {portfolio.content.imageVideoTabsGallery.length > 2 && (
-                                <Chip
-                                  label={`+${portfolio.content.imageVideoTabsGallery.length - 2}`}
-                                  size="small"
-                                  sx={{ mt: 0.5 }}
-                                />
-                              )}
-                            </Stack>
-                          )}
-                        </Stack>
-                      </TableCell>
-
-                      {/* Dates Column */}
-                      <TableCell>
-                        <Stack spacing={0.5}>
-                          <Stack direction="row" spacing={0.5} alignItems="center">
-                            <CalendarToday fontSize="small" color="action" />
-                            <Typography variant="caption">
-                              Created: {formatDate(portfolio.created_at)}
-                            </Typography>
-                          </Stack>
-                          {/* <Typography variant="caption" color="text.secondary">
+                            {/* <Typography variant="caption" color="text.secondary">
                             Updated: {formatDate(portfolio.updated_at)}
                           </Typography> */}
-                        </Stack>
-                      </TableCell>
+                          </Stack>
+                        </TableCell>
 
-                      {/* Actions Column */}
-                      <TableCell align="center">
-                        <Stack direction="row" spacing={1} justifyContent="center">
-                          <Tooltip title="Preview">
-                            <IconButton
-                              size="small"
-                              color="info"
-                              onClick={() => handleView(portfolio.id)}
-                            >
-                              <ViewIcon fontSize="small" />
-                            </IconButton>
-                          </Tooltip>
-                          <Tooltip title="Edit">
-                            <IconButton
-                              size="small"
-                              color="primary"
-                              onClick={() => handleEdit(portfolio.id)}
-                            >
-                              <EditIcon fontSize="small" />
-                            </IconButton>
-                          </Tooltip>
-                          <Tooltip title="Delete">
-                            <IconButton
-                              size="small"
-                              color="error"
-                              onClick={() => handleDeleteClick(portfolio.id)}
-                            >
-                              <DeleteIcon fontSize="small" />
-                            </IconButton>
-                          </Tooltip>
-                        </Stack>
-                      </TableCell>
-                    </TableRow>
-                  )})
+                        {/* Actions Column */}
+                        <TableCell align="center">
+                          <Stack direction="row" spacing={1} justifyContent="center">
+                            <Tooltip title="Preview">
+                              <IconButton
+                                size="small"
+                                color="info"
+                                onClick={() => handleView(portfolio.id)}
+                              >
+                                <ViewIcon fontSize="small" />
+                              </IconButton>
+                            </Tooltip>
+                            <Tooltip title="Edit">
+                              <IconButton
+                                size="small"
+                                color="primary"
+                                onClick={() => handleEdit(portfolio.id)}
+                              >
+                                <EditIcon fontSize="small" />
+                              </IconButton>
+                            </Tooltip>
+                            <Tooltip title="Delete">
+                              <IconButton
+                                size="small"
+                                color="error"
+                                onClick={() => handleDeleteClick(portfolio.id)}
+                              >
+                                <DeleteIcon fontSize="small" />
+                              </IconButton>
+                            </Tooltip>
+                          </Stack>
+                        </TableCell>
+                      </TableRow>
+                    )
+                  })
                 ) : (
                   <TableRow>
                     <TableCell colSpan={6} align="center" sx={{ py: 8 }}>
