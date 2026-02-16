@@ -52,7 +52,7 @@ const Menuitems = [
   },
   {
     id: uniqueId(),
-    title: "Created Portfolio",
+    title: "Created Portfolios",
     icon: IconListCheck,
     href: "/created-portfolios",
   },

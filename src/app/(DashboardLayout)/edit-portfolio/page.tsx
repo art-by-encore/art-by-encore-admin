@@ -11,7 +11,7 @@ import MonthlyEarnings from '@/app/(DashboardLayout)/components/dashboard/Monthl
 import CreateBlogForm from '../components/forms/theme-elements/CreateBlogForm';
 const Dashboard = () => {
   return (
-    <PageContainer title="Dashboard" description="this is Dashboard">
+    <PageContainer title="Edit Portfolio" description="edit portfolio">
       <Box>
         <Grid container spacing={3}>
           <Grid size={{ xs: 12, lg: 12 }}>

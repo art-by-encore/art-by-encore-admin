@@ -5,7 +5,7 @@ import CreateBlogForm from '../components/forms/theme-elements/CreateBlogForm';
 import CreatedBlogsPage from '../components/blogs/CreatedBlogsPage';
 const Dashboard = () => {
   return (
-    <PageContainer title="Dashboard" description="this is Dashboard">
+    <PageContainer title="Created Blogs" description="created blogs">
       <Box>
         <Grid container spacing={3}>
           <Grid size={{ xs: 12, lg: 12 }}>

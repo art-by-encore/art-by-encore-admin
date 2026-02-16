@@ -5,7 +5,7 @@ import CreateSEOBannersForm from '../components/forms/theme-elements/CreateSEOBa
 // components
 const Dashboard = () => {
   return (
-    <PageContainer title="Dashboard" description="this is Dashboard">
+    <PageContainer title="Edit SEO Banners" description="edit seo banners">
       <Box>
         <Grid container spacing={3}>
           <Grid size={{ xs: 12, lg: 12 }}>

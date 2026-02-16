@@ -4,7 +4,7 @@ import PageContainer from '@/app/(DashboardLayout)/components/container/PageCont
 import CreatedPortfolioPage from '../components/portfolio/CreatedPortfolioPage';
 const Dashboard = () => {
   return (
-    <PageContainer title="Dashboard" description="this is Dashboard">
+    <PageContainer title="Created Portfolios" description="created portfolios">
       <Box>
         <Grid container spacing={3}>
           <Grid size={{ xs: 12, lg: 12 }}>
