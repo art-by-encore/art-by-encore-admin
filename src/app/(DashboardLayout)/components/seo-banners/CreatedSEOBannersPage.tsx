@@ -358,7 +358,7 @@ const CreatedSEOBannersPage = () => {
           {/* Table */}
           <TableContainer component={Paper} elevation={2}>
             <Table sx={{ minWidth: 650 }}>
-              <TableHead sx={{ backgroundColor: 'primary.light' }}>
+              <TableHead sx={{ backgroundColor: 'primary' }}>
                 <TableRow>
                   <TableCell><Typography fontWeight="bold">ID</Typography></TableCell>
                   <TableCell><Typography fontWeight="bold">SEO Settings</Typography></TableCell>
@@ -522,7 +522,7 @@ const CreatedSEOBannersPage = () => {
                               <EditIcon fontSize="small" />
                             </IconButton>
                           </Tooltip>
-                          <Tooltip title="Delete">
+                          {/* <Tooltip title="Delete">
                             <IconButton
                               size="small"
                               color="error"
@@ -530,7 +530,7 @@ const CreatedSEOBannersPage = () => {
                             >
                               <DeleteIcon fontSize="small" />
                             </IconButton>
-                          </Tooltip>
+                          </Tooltip> */}
                         </Stack>
                       </TableCell>
                     </TableRow>
