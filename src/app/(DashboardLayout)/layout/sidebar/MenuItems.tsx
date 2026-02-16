@@ -3,6 +3,7 @@ import {
   IconLayoutDashboard,
   IconPencilPlus,
   IconListCheck,
+  IconMailSpark,
 } from "@tabler/icons-react";
 
 import { uniqueId } from "lodash";
@@ -55,6 +56,12 @@ const Menuitems = [
     title: "Created Portfolios",
     icon: IconListCheck,
     href: "/created-portfolios",
+  },
+  {
+    id: uniqueId(),
+    title: "Contact Us",
+    icon: IconMailSpark,
+    href: "/contact-us",
   },
 ];
 
