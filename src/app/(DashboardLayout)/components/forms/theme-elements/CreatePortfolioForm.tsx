@@ -19,8 +19,10 @@ import {
   InputLabel,
   Tabs,
   Tab,
+  Checkbox,
+  FormControlLabel,
 } from "@mui/material";
-import { Formik, Form, FieldArray } from "formik";
+import { Formik, Form, FieldArray, } from "formik";
 import * as Yup from "yup";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -147,6 +149,8 @@ const initialValues = {
       cardTitle: "",
       ctaText: "",
       pageUrl: "",
+      externalURL: '',
+      isExternalURL:false,
       cardBackgroundImage: ""
     },
     imageGallery: [{ image: "", alt: "" }],
@@ -412,10 +416,18 @@ const CreatePortfolioForm = () => {
   const [activeTab, setActiveTab] = React.useState(0);
   const [uploadingFields, setUploadingFields] = React.useState<Set<string>>(new Set());
   const [formResetKey, setFormResetKey] = React.useState(Date.now());
+  const [isExternalURL, setIsExternalURL] = React.useState(false);
   const [successModalOpen, setSuccessModalOpen] = useState(false);
   const [errorModalOpen, setErrorModalOpen] = useState(false);
   const router = useRouter();
-   const handleSubmit = async (values: typeof initialValues, { setErrors, resetForm }: any) => {
+
+const handleExternalUrl = (e: React.ChangeEvent<HTMLInputElement>) => {
+  setIsExternalURL(e.target.checked);
+};
+
+
+
+  const handleSubmit = async (values: typeof initialValues, { setErrors, resetForm }: any) => {
     // Run custom validation for gallery-specific rules
     const validationErrors = validateForm(values);
     if (Object.keys(validationErrors).length > 0) {
@@ -804,7 +816,21 @@ const CreatePortfolioForm = () => {
                     disabled={loading}
                     placeholder="https://example.com/page"
                   />
-
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={values.content.card?.isExternalURL || false}
+                        onChange={(e) => setFieldValue("content.card.isExternalURL", e.target.checked)}
+                      />
+                    }
+                    label="External URL"
+                  />
+                 
+                  {touched.key && errors.key && (
+                    <Typography color="error" variant="caption" sx={{ mt: 1, display: 'block' }}>
+                      {errors.key}
+                    </Typography>
+                  )}
                   {/* Card Background Image with Cloudinary upload */}
                   <FileUploadField
                     key={`card-bg-${formResetKey}`}

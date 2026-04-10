@@ -19,6 +19,8 @@ import {
   InputLabel,
   Tabs,
   Tab,
+  Checkbox,
+  FormControlLabel,
 } from "@mui/material";
 import { Formik, Form, FieldArray } from "formik";
 import * as Yup from "yup";
@@ -147,6 +149,7 @@ const emptyInitialValues = {
       cardTitle: "",
       ctaText: "",
       pageUrl: "",
+      isExternalURL: false,
       cardBackgroundImage: ""
     },
     imageGallery: [{ image: "", alt: "" }],
@@ -933,7 +936,15 @@ const UpdatedPortfolioForm = () => {
                     disabled={loading}
                     placeholder="https://example.com/page"
                   />
-
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={values.content.card?.isExternalURL || false}
+                        onChange={(e) => setFieldValue("content.card.isExternalURL", e.target.checked)}
+                      />
+                    }
+                    label="External URL"
+                  />
                   {/* Card Background Image with Cloudinary upload */}
                   <FileUploadField
                     key={`card-bg-${formResetKey}`}
